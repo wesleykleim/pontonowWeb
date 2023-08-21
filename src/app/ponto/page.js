@@ -1,7 +1,9 @@
 import Image from 'next/image'
 
 export default function Home() {
+  
   return (
+    <>
     <nav className="flex justify-between items-center bg-slate-900 px-6 py-4">
         <ul className="flex gap-20 items-end">
           <li><a href="#"><h1 className='text-2xl text-slate-100' >Ponto Now</h1></a></li>
@@ -15,6 +17,11 @@ export default function Home() {
         </div>
     </nav>
    
-   
+    <main className= "bg-slate-900 m-20 p-8">
+      <h2>
+        Ponto
+      </h2>
+    </main>
+    </>
   )
 }
