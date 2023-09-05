@@ -3,16 +3,14 @@
 export async function creat(formData){
     const url = "http://localhost:8080/api/cadastrar"
 
-    console.log("formData")
-    console.log(Object.fromEntries(formData))
-
     const options = {
         
         method:"POST",
-        body: JSON.stringify() ,
+        body: JSON.stringify(Object.fromEntries(formData)) ,
         headers: {
             "Content-Type": "application/json"
-            
+
         }
     }
+    fetch(url, options)
 }
