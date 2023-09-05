@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import NavBar from "@/components/NavBar";
+import Button from '@/components/Button';
+import { CreditCardIcon } from 'lucide-react';
 export default function cadastro() {
 
   const data = [
@@ -34,10 +36,13 @@ export default function cadastro() {
       <NavBar />
 
       <main className="bg-slate-900 m-20 p-8">
-        <div>
-          <h2>
+        <div className="flex justify-between items-center">
+          <h2 className=" text-xl text-slate-100">
             Cadastro de Funcionários
           </h2>
+          <Button icon={<CreditCardIcon className="h-6 w-6 "/>} href="/cadastro/new">
+            Criar Cadastro
+          </Button>
         </div>
       </main>
     </>
