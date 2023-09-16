@@ -2,7 +2,7 @@ import Image from 'next/image'
 import NavBar from "@/components/NavBar";
 import Button from '@/components/Button';
 import { CreditCardIcon } from 'lucide-react';
-export default function cadastro() {
+
 
   const data = [
     {
@@ -25,10 +25,11 @@ export default function cadastro() {
 
   async function getContas() {
     const url = "http://localhost:8080/api/cadastrar"
-    const response = await fetch(url, { next: { revalidate: 0 } })
+    const response = await fetch(url, { next: { revalidate: 3600 } })
     return respons.json()
   }
 
+  export default function cadastro() {
 
 
   return (

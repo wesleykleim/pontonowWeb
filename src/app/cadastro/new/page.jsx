@@ -4,6 +4,16 @@ import TestImput from "@/components/TextImput";
 import { CreditCardIcon } from 'lucide-react';
 
 export default function FormCadastro(){
+    const [messagem, setMessage] = useState("")}
+    async function hardleSubmit(FormData){
+        const resp = await create(FormData)
+        if (resp.error){
+            setMessage(resp.error)
+            return
+        }
+        setMenssage("conta cadastrada com Sucesso")
+    }
+    
     return(
         <>
         <NaveBar active ={"cadastro"}/>
@@ -12,10 +22,10 @@ export default function FormCadastro(){
             <h2 className="text-xl text-slate-100">Cadastrar Funcionario</h2>
 
             <form action={create}>
-                <TextInput id="nome" label="nome"/>
-                <TextInput id="cpf" label="cpf"/>
-                <TextInput id="sexo" label="sexo"/>
-                <TextInput id="cargo" label="cargo"/>
+                <TextInput name="nome" id="nome" label="nome"/>
+                <TextInput name="cpf"id="cpf" label="cpf"/>
+                <TextInput name="sexo"id="sexo" label="sexo"/>
+                <TextInput name="cargo"id="cargo" label="cargo"/>
 
                 <div className="flex justify-around">
                     <Button variant="secundary">Salvar</Button>
@@ -25,4 +35,3 @@ export default function FormCadastro(){
         </main>
         </>
     )
-}
