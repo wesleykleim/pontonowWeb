@@ -1,4 +1,4 @@
-import DropMenu  from "@/components/DropMenu";
+import DropMenu  from "@/components/ui/DropMenu";
 import { CreditCardIcon } from "lucide-react";
 
 export default function DataRow({cadastro}){
@@ -9,8 +9,8 @@ export default function DataRow({cadastro}){
 
         </div>
         <span> Nome Completo</span>
-        <div className=" text-slate-300">
-            <DropMenu className="text-slate-300"/>
+        <div className="text-slate-300"  >
+            <DropMenu conta={conta} />
         </div>
     </div>
 

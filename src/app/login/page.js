@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import NavBar from "@/components/NavBar";
 import { BeakerIcon } from '@heroicons/react/24/solid'
-import DropMenu from '@/components/DropMenu';
+import DropMenu from '@/components/ui/DropMenu';
 
 export default function login() {
 
