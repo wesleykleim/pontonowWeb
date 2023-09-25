@@ -1,4 +1,6 @@
 'user-server'
+import { cookies } from "next/headers"
+import { revalidatePath } from "next/cache"
 
 export async function creat(formData){
     const url = "http://localhost:8080/api/cadastrar"
@@ -25,10 +27,21 @@ export async function creat(formData){
     revalidatePath("/cadastro")
     return{ok: "Cadastro realizado com sucesso"}
 }
-export async function getContas(){
+export async function getCadastro(){
     await new Promise(r => setTimeout(r, 5000));
     const response = await fetch(url,  { next: { revalidate: 3600 } })
     return response.json()
+    const token = cookies().get("meujulius_token")
+    const options = {
+        headers: {
+            "Authorization": `Bearer ${token.value}`
+        }
+    }
+    const response = await fetch(url, options)
+
+    if (response.status !== 200) throw new Error("Não pode carregar os dados")
+
+    return await response.json()
 }
 
 export async function destroy(id){
